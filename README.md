@@ -52,3 +52,28 @@ whois 5.61.239.22
 // изменение hosts
 sudo gedit /etc/hosts
 ```
+
+## lesson 3
+``` bash
+// подключение к серверу по порту
+telnet [host] [port]
+// запрос
+[method] [path]?[params] [protocol]
+Host: [host]
+Referer: [url]
+// вывод закоровков запросов и ответов
+curl -i [host] | less
+// вывод запросов больше информации
+curl -v [host] 2>&1 | less
+```
+
+* 1** - информационная
+* 2** - успешный
+* 3** - перенаправление
+* 4** - ошибка в запросе
+* 5** - ошибка на сервере
+
+``` html
+// запрет передачи url ref
+<meta name="referrer" content="no-referrer">
+```
