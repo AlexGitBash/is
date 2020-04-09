@@ -1,0 +1,47 @@
+<!-- 1.Создайте HTML-страницу на которой будет картинка с другого домена и ссылка. Пишите без тегов <html> и <body>, изучите реакцию браузера в панели веб-разработчика “Элементы” (Elements). -->
+
+<a class="header__link" href="https://geekbrains.ru/posts/kak-borotsya-s-tekhnicheskim-dolgom-pri-rabote-nad-produktom">
+  <img class="header__img" src="https://d2xzmw6cctk25h.cloudfront.net/geekbrains/public/ckeditor_assets/pictures/8217/retina-ae66ae7bb43178332553db71257b992f.jpg" alt="Как сдавать домашку если давно frontend">
+</a>
+
+<!-- 3. Дан HTML документ. Необходимо добиться того, чтобы парсинг документа успешно завершался и была отображена надпись All this text in </h1> tag! Amazing! стандартным стилем <h1>. -->
+
+<h1 class="header__caption">All this text in &lt;/h1&gt; tag! Amazing!</h1>
+
+<!-- 4. (*) Создать iframe. Изменить стили iframe, так чтобы он был растянут на весь экран, находился сверху основной страницы и был полупрозрачен.
+Открыть в получившемся iframe страницу https://geekbrains.ru. Разобраться что произошло и почему. -->
+
+<!-- The Sec-Fetch-Dest fetch metadata header indicates the request's destination, that is how the fetched data will be used. -->
+
+<iframe class="header__frame" src="https://geekbrains.ru" frameborder="0"></iframe>
+
+<!-- 2. Добавить стили к HTML: поменять цвет, позицию, прозрачность и размер всех элементов на странице из задания 1. -->
+
+<style>
+  .header__link {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #000;
+  }
+  .header__img {
+    display: block;
+    width: 500px;
+    opacity: 0.8;
+  }
+  .header__caption {
+    text-align: center;
+  }
+  .header__frame {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+  }
+</style>
