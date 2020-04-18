@@ -1,1 +1,1 @@
-alert(“I’m legitimate!”)
+alert("I'm legitimate!")
