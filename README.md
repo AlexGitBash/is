@@ -22,6 +22,9 @@ cd /var/log/nginx/
 tail access.log
 // установка php
 sudo apt install php-fpm
+// установка mysql
+sudo apt install mysql-server
+sudo mysql_secure_installation
 // установка burp suite
 bash burpsuite.sh
 // остановка nginx
