@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function changeBodyColor(color) {
+      document.body.style.backgroundColor = color;
+      localStorage.color = color;
+    }
+    
+    function prewColor() {
+      document.body.style.backgroundColor = localStorage.color || '';
+    }
+    
+    window.addEventListener('load', prewColor);
+
+  </script>
+  <button onclick="changeBodyColor('red')">Make it hell!</button>
+  <button onclick="changeBodyColor('green')">Make it grass!</button>
+</body>
+
+</html>
