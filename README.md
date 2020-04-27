@@ -137,3 +137,22 @@ curl -v [host] 2>&1 | less
 
 </html>
 ```
+
+## lesson 5
+``` javascript
+var a = 1;
+let b = 'string';
+const c = [a, b];
+
+function log(a, b) {
+  return a + ' ' + b;
+}
+
+if (c) {
+  console.log(log(a, b));
+}
+
+document.querySelector('h1').innerHTML = 'Caption';
+
+fetch('https://geekbrains.ru/');
+```
