@@ -161,4 +161,10 @@ fetch('https://geekbrains.ru/');
 * XSS - межсайтовый скриптинг
 * SOP - запрещает скрипты между документами
 * CSP - защита от XSS, уменьшает вред [Справочник](https://content-security-policy.com/)
-* CORS - ослабляет политику SOP
+* CORS - ослабляет политику SOP [Справочник](https://enable-cors.org/index.html)
+
+## lesson 7
+* Origin [scheme + hostname + port]
+``` javascript
+localStorage.color = 'red';
+```
