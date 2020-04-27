@@ -156,3 +156,9 @@ document.querySelector('h1').innerHTML = 'Caption';
 
 fetch('https://geekbrains.ru/');
 ```
+
+## lesson 6
+* XSS - межсайтовый скриптинг
+* SOP - запрещает скрипты между документами
+* CSP - защита от XSS, уменьшает вред [Справочник](https://content-security-policy.com/)
+* CORS - ослабляет политику SOP
