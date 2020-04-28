@@ -168,3 +168,31 @@ fetch('https://geekbrains.ru/');
 ``` javascript
 localStorage.color = 'red';
 ```
+
+## lesson 8
+* PostMessage - передача сообщений между окнами
+``` javascript
+const target = window.open('http://hostname/page/');
+let message = 'string';
+target.postMessage(message, 'http://hostname');
+
+// page
+window.addEventListener('message', function(event) {
+  event.origion === 'http://localhost' && console.log(event.data);
+});
+```
+* WebSocket - постоянное соединение с сервером (wss:)
+``` javascript
+// Создает WebSocket - подключение.
+const socket = new WebSocket('ws://localhost:8080');
+
+// Соединение открыто
+socket.addEventListener('open', function (event) {
+    socket.send('Hello Server!');
+});
+
+// Наблюдает за сообщениями
+socket.addEventListener('message', function (event) {
+    console.log('Message from server ', event.data);
+});
+```
